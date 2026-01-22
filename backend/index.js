@@ -94,6 +94,13 @@ app.get("/api/secret", (req, res) => {
   res.status(403).json({ message: "Nope 😄 Try code=411L" });
 });
 
+// welcome message
+app.get("/", (req, res) => {
+  res.json({ 
+    message: "Welcome to VibeCheck API!" 
+  });
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`VibeCheck API running at http://localhost:${PORT}`);
