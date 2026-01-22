@@ -1,0 +1,132 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Main Card */
+.card {
+  background: white;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.02);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 5px;
+}
+
+p {
+  color: #b2bec3;
+  font-size: 0.9rem;
+}
+
+/* Control Groups */
+.control-group {
+  margin-bottom: 20px;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 16px;
+}
+
+.control-group label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #b2bec3;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Button Layout */
+.btn-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* General Button Styles */
+button {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* -- Colors -- */
+#btnFortune { background: #6c5ce7; }
+#btnJoke { background: #00cec9; }
+
+.btnMood { background: white; color: #636e72; border: 1px solid #dfe6e9; }
+.btnMood:hover { background: #dfe6e9; }
+
+#btnSmash { background: #ff7675; }
+#btnSecret { background: #2d3436; }
+
+/* Output Area - UPDATED */
+.output-area {
+  margin-top: 25px;
+}
+
+h2 {
+  font-size: 0.7rem;
+  color: #b2bec3;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+#out {
+  background: #2d3436;
+  color: #55efc4;
+  padding: 20px;            /* Increased padding for better look */
+  border-radius: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  
+  /* These lines ensure the box grows with text */
+  min-height: 60px;
+  height: auto;
+  white-space: pre-wrap;    /* Wraps text to next line */
+  word-wrap: break-word;    /* Breaks very long words if needed */
+  line-height: 1.5;         /* Makes multiple lines easier to read */
+}
