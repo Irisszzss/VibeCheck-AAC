@@ -43,3 +43,30 @@ document.getElementById("btnSecret").addEventListener("click", async () => {
   const data = await getJSON(`${API_BASE}/api/secret?code=411L`);
   show(data);
 });
+
+// --- VISUAL THEME CHANGER ---
+// This code changes the background color based on button clicks
+
+const body = document.body;
+
+function setTheme(themeName) {
+    // Remove all previous theme classes
+    body.className = ''; 
+    // Add the new theme class
+    body.classList.add(themeName);
+}
+
+// Attach events to buttons
+document.getElementById('btnFortune').addEventListener('click', () => setTheme('theme-fortune'));
+document.getElementById('btnJoke').addEventListener('click', () => setTheme('theme-joke'));
+document.getElementById('btnSmash').addEventListener('click', () => setTheme('theme-smash'));
+document.getElementById('btnSecret').addEventListener('click', () => setTheme('theme-secret'));
+
+// Mood buttons (using the data attribute)
+document.querySelectorAll('.btnMood').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        // Get the mood (happy, tired, stressed) from the button
+        const mood = btn.getAttribute('data-mood');
+        setTheme('theme-' + mood);
+    });
+});
