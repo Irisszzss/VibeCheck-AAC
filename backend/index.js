@@ -25,12 +25,14 @@ const fortunes = [
   "Your next commit will be clean and meaningful.",
   "A bug will disappear when you add one console.log().",
   "You passed the vibe check today. 😎",
+  "Stack Overflow is down? Time to panic.",
 ];
 
 const jokes = [
   "Why did the developer go broke? Because they used up all their cache.",
   "My code has two moods: works or why-is-this-happening.",
   "I told my program a joke... it just threw an exception.",
+  "Hardware: The part of the computer you can kick.",
 ];
 
 const vibeMap = {
