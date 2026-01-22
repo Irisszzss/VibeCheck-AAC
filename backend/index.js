@@ -70,8 +70,14 @@ app.get("/api/vibe", (req, res) => {
   res.json({ mood, ...vibe });
 });
 
+// POST /api/smash -> increases counter and returns the updated value
+// [ADDED IN COMMIT 2]
+app.post("/api/smash", (req, res) => {
+  smashes += 1;
+  res.json({ smashes });
+});
+
 // GET /api/smashes -> returns current counter
-// (Note: The POST route is missing intentionally for this commit!)
 app.get("/api/smashes", (req, res) => {
   res.json({ smashes });
 });
