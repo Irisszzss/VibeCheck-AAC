@@ -1,0 +1,174 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  
+  /* DEFAULT BACKGROUND (Neutral) */
+  background: linear-gradient(-45deg, #e0eafc, #cfdef3, #e0eafc);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  
+  /* Smoothly fade between colors */
+  transition: background-image 0.8s ease-in-out; 
+}
+
+/* --- THE COLOR THEMES --- */
+
+/* 1. Fortune (Mystical Purple) */
+body.theme-fortune {
+  background-image: linear-gradient(-45deg, #a18cd1, #fbc2eb, #a6c0fe);
+}
+
+/* 2. Joke (Fun Blue/Cyan) */
+body.theme-joke {
+  background-image: linear-gradient(-45deg, #4facfe, #00f2fe, #43e97b);
+}
+
+/* 3. Happy (Sunny Yellow/Orange) */
+body.theme-happy {
+  background-image: linear-gradient(-45deg, #fceabb, #f8b500, #ffe259);
+}
+
+/* 4. Tired (Sleepy Grey/Dark Blue) */
+body.theme-tired {
+  background-image: linear-gradient(-45deg, #bdc3c7, #2c3e50, #4b6cb7);
+  color: #ecf0f1; /* Switch text to light for dark backgrounds */
+}
+
+/* 5. Stressed (Chaotic Red/Orange) */
+body.theme-stressed {
+  background-image: linear-gradient(-45deg, #ff9a9e, #fecfef, #feada6);
+}
+
+/* 6. Smash (Intense Red) */
+body.theme-smash {
+  background-image: linear-gradient(-45deg, #ff416c, #ff4b2b, #cb2d3e);
+  color: white;
+}
+
+/* 7. Secret (Matrix/Hacker Dark) */
+body.theme-secret {
+  background-image: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+  color: #00ff00;
+}
+
+/* Moving Animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- GLASS CARD --- */
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);          
+  -webkit-backdrop-filter: blur(20px); 
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 480px;
+  border-radius: 24px;
+  padding: 30px;
+  transition: all 0.5s ease;
+}
+
+/* Header */
+.header { text-align: center; margin-bottom: 25px; }
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  opacity: 0.9;
+}
+
+p { font-size: 0.9rem; font-weight: 600; opacity: 0.7; }
+
+/* Control Groups */
+.control-group {
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.2); /* Subtle inner glass */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 16px;
+}
+
+.control-group label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  opacity: 0.6;
+}
+
+/* Button Layout */
+.btn-row { display: flex; gap: 10px; }
+
+/* Button Styles */
+button {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+button:active { transform: scale(0.96); }
+
+/* Specific Button Colors */
+#btnFortune { background: #a18cd1; }
+#btnJoke { background: #4facfe; }
+.btnMood[data-mood="happy"] { background: #f8b500; }
+.btnMood[data-mood="tired"] { background: #34495e; }
+.btnMood[data-mood="stressed"] { background: #ff9a9e; color: #fff; }
+#btnSmash { background: #ff416c; }
+#btnSecret { background: #24243e; }
+
+/* Output Area */
+.output-area { margin-top: 25px; }
+h2 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+#out {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  color: #00ffcc;
+  padding: 20px;
+  border-radius: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  min-height: 60px;
+  height: auto;
+  white-space: pre-wrap;
+  border: 1px solid rgba(255,255,255,0.1);
+}
